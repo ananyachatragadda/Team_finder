@@ -1,0 +1,234 @@
+/* --- OFFICIAL SOFT LAVENDER THEME --- */
+:root {
+    --bg-color: #f5f3ff;
+    --card-white: #ffffff;
+    --accent-purple: #8b5cf6;
+    --text-deep: #2e1065;
+    --text-muted: #6b7280;
+    --border-light: #ddd6fe;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-deep);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* --- PAGE CENTERING LOGIC --- */
+.centered-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Takes full screen height */
+    padding: 20px;
+}
+
+.form-card {
+    background: var(--card-white);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.1), 0 10px 10px -5px rgba(139, 92, 246, 0.04);
+    text-align: center; /* Centers the internal text */
+}
+
+.logo { font-size: 3rem; margin-bottom: 10px; }
+h1 { font-size: 1.8rem; margin: 10px 0; font-weight: 700; }
+.subtitle { color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem; }
+
+/* --- FORM STYLING --- */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: var(--text-deep);
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    width: 100%;
+    background: var(--accent-purple);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.divider {
+    margin: 25px 0;
+    position: relative;
+    border-top: 1px solid var(--border-light);
+}
+
+.divider span {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-white);
+    padding: 0 15px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-purple);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* --- RESULTS PAGE GRID --- */
+.results-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.results-header { text-align: center; margin-bottom: 50px; }
+
+#team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.skill-badge {
+    background: #ede9fe;
+    color: var(--accent-purple);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.admin-tools {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.btn-clear {
+    background: transparent;
+    border: 1px solid #fca5a5;
+    color: #ef4444;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- BOTTOM NAVIGATION LOGIC --- */
+.bottom-nav {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content:空间-between; /* This pushes the back button left and clear button right */
+    align-items: center;
+}
+
+.back-btn-bottom {
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 0;
+    transition: color 0.2s;
+}
+
+.back-btn-bottom:hover {
+    color: var(--accent-purple);
+    text-decoration: underline;
+}
+
+/* Make sure the container allows for a bottom section */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+/* Adjust the clear button so it doesn't look like a main action */
+.btn-clear {
+    background: transparent;
+    border: 1px solid #fee2e2;
+    color: #f87171;
+    font-size: 0.85rem;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+.bottom-nav {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd6fe; /* Light purple line */
+    display: flex;
+    justify-content: space-between; /* This is the secret for left/right alignment */
+    align-items: center;
+}
+
+.btn-clear {
+    background: transparent;
+    border: 1px solid #fecaca;
+    color: #ef4444;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-clear:hover {
+    background: #fef2f2;
+    border-color: #ef4444;
+}

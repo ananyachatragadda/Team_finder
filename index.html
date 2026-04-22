@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Finder | Connect with Peers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div id="page-form" class="centered-page">
+            <section class="form-card">
+                <div class="logo">🚀</div>
+                <h1>Join the Team</h1>
+                <p class="subtitle">Enter your details to find the perfect project partner.</p>
+                
+                <form id="add-student-form">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="e.g. Ananya Rao" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="skill">Primary Skill</label>
+                        <input type="text" id="skill" placeholder="e.g. MERN Stack, Python" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="year">Academic Year</label>
+                        <select id="year">
+                            <option value="1st">1st Year</option>
+                            <option value="2nd">2nd Year</option>
+                            <option value="3rd">3rd Year</option>
+                            <option value="4th">4th Year</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Create Profile & View Teams</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button onclick="showPage('results')" class="btn-secondary">Skip to View Teams</button>
+            </section>
+        </div>
+
+        <div id="page-results" style="display: none;">
+            <div class="results-container">
+                <header class="results-header">
+                    <h1>Available Teammates</h1>
+                    <div class="search-box">
+                        <input type="text" id="skill-search" placeholder="🔍 Search by skill...">
+                    </div>
+                </header>
+
+                <div id="team-container"></div>
+
+                <div class="bottom-nav">
+                    <button onclick="showPage('form')" class="back-btn-bottom">← Back to Form</button>
+                    <button onclick="clearDatabase()" class="btn-clear">Clear All Profiles</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
